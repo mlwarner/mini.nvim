@@ -137,6 +137,11 @@ T['setup()']['validates `config` argument'] = function()
   expect_config_error({ window = { winblend = 'a' } }, 'window.winblend', 'number')
 end
 
+T['break on not Linux'] = function()
+  local is_linux = child.loop.os_uname().sysname ~= 'Linux'
+  eq(is_linux, true)
+end
+
 T['make_notify()'] = new_set()
 
 local notify = forward_lua('vim.notify')
