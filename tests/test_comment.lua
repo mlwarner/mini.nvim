@@ -127,6 +127,14 @@ T['setup()']['properly handles `config.mappings`'] = function()
   eq(has_map('gc', 'Comment'), false)
 end
 
+T['case-depended screenshot files'] = new_set({ parametrize = { { 'aaa' }, { 'AAA' } } }, {
+  test = function(arg)
+    child.set_size(15, 30)
+    set_lines({ 'The argument is ' .. arg })
+    child.expect_screenshot()
+  end,
+})
+
 T['toggle_lines()'] = new_set()
 
 local toggle_lines = forward_lua('MiniComment.toggle_lines')
