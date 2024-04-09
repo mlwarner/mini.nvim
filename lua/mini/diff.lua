@@ -1,3 +1,5 @@
+-- Trigger test CI
+
 --- *mini.diff* Work with diff hunks
 --- *MiniDiff*
 ---
